@@ -7,7 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name="juego")
@@ -22,6 +26,11 @@ public class ModelJuego implements Serializable {
 	@Column(name="id_juego")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idJuego;
+	
+	@ManyToOne
+	@JoinColumn(name="tipo_tecnologia", nullable = false, referencedColumnName = "id_tipo_tecnologia")
+	@JsonBackReference
+	private ModelTipoTecnologia tipo_tecnologia;
 	
 	private String nom_juego;
 	private String year_juego;

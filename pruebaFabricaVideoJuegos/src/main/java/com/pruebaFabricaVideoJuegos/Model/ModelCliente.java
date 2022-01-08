@@ -1,13 +1,22 @@
 package com.pruebaFabricaVideoJuegos.Model;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 @Entity
 @Table(name ="cliente")
@@ -21,6 +30,12 @@ public class ModelCliente implements Serializable{
 	@Column(name ="id_cliente")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idCliente;
+	
+	
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+	@JsonManagedReference
+	private List<ModelAlquiler> listAlquilados;
+	
 	
 	private Integer cc_cli;
 	private String nom_cli;
@@ -57,6 +72,12 @@ public class ModelCliente implements Serializable{
 	}
 	public void setNo_cel_cliente(Integer no_cel_cliente) {
 		this.cel_cli = no_cel_cliente;
+	}
+	public List<ModelAlquiler> getListAlquilados() {
+		return listAlquilados;
+	}
+	public void setListAlquilados(List<ModelAlquiler> listAlquilados) {
+		this.listAlquilados = listAlquilados;
 	}
 	
 	

@@ -2,13 +2,20 @@ package com.pruebaFabricaVideoJuegos.Model;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name="alquiler")
@@ -22,6 +29,16 @@ public class ModelAlquiler implements Serializable {
 	@Column(name="id_alquiler")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idAlquiler;
+
+	@ManyToOne
+	@JoinColumn(name = "cliente", nullable = false, referencedColumnName = "id_cliente")
+	@JsonBackReference
+	private ModelCliente cliente;
+	
+	
+	@ManyToMany
+	@JoinTable(name="alquiler_juegos",joinColumns = @JoinColumn(name="id_cliente"),inverseJoinColumns = @JoinColumn(name="id_juego"))
+	private List<ModelJuego> listJuegos;
 	
 	private Date fec_inicio_alq;
 	private Date fec_fin_alq;
