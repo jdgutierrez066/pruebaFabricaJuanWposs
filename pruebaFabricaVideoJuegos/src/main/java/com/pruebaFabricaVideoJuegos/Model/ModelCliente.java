@@ -34,7 +34,7 @@ public class ModelCliente implements Serializable{
 	
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
 	@JsonManagedReference
-	private List<ModelAlquiler> listAlquilados;
+	private List<ModelAlquiler> listadoAlquilados;
 	
 	
 	private Integer cc_cli;
@@ -43,6 +43,20 @@ public class ModelCliente implements Serializable{
 	private Integer cel_cli;
 
 	
+	
+	public ModelCliente( Integer cc_cli, String nom_cli,
+			String ape_cli, Integer cel_cli) {
+		super();
+		this.cc_cli = cc_cli;
+		this.nom_cli = nom_cli;
+		this.ape_cli = ape_cli;
+		this.cel_cli = cel_cli;
+	}
+	
+	public ModelCliente() {
+		super();
+	}
+
 	public Integer getIdcliente() {
 		return idCliente;
 	}
@@ -74,10 +88,10 @@ public class ModelCliente implements Serializable{
 		this.cel_cli = no_cel_cliente;
 	}
 	public List<ModelAlquiler> getListAlquilados() {
-		return listAlquilados;
+		return listadoAlquilados;
 	}
 	public void setListAlquilados(List<ModelAlquiler> listAlquilados) {
-		this.listAlquilados = listAlquilados;
+		this.listadoAlquilados = listAlquilados;
 	}
 	
 	
