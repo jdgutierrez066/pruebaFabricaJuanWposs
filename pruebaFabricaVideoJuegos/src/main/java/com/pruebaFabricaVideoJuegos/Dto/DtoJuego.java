@@ -1,33 +1,9 @@
-package com.pruebaFabricaVideoJuegos.Model;
+package com.pruebaFabricaVideoJuegos.Dto;
 
-import java.io.Serializable;
-import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+public class DtoJuego {
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
-@Entity
-@Table(name="juego")
-
-public class ModelJuego implements Serializable {
-
-	
-	private static final long serialVersionUID = -3055130392984654050L;
-	
-
-	@Id
-	@Column(name="id_juego")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idJuego;
+	private Integer id_juego;
 	
 	
 
@@ -40,10 +16,10 @@ public class ModelJuego implements Serializable {
 	private Integer precio_juego;
 	private boolean status_juego;
 	
-	public ModelJuego(Integer idJuego, String tit_juego, String nom_juego, String year_juego, String director_juego,
+	public DtoJuego(Integer id_juego, String tit_juego, String nom_juego, String year_juego, String director_juego,
 			String productor_juego, String tipTecnologia_juego, Integer precio_juego, boolean status_juego) {
 		super();
-		this.idJuego = idJuego;
+		this.id_juego = id_juego;
 		this.tit_juego = tit_juego;
 		this.nom_juego = nom_juego;
 		this.year_juego = year_juego;
@@ -54,16 +30,16 @@ public class ModelJuego implements Serializable {
 		this.status_juego = status_juego;
 	}
 
-	public ModelJuego() {
+	public DtoJuego() {
 		super();
 	}
 
-	public Integer getIdJuego() {
-		return idJuego;
+	public Integer getId_juego() {
+		return id_juego;
 	}
 
-	public void setIdJuego(Integer idJuego) {
-		this.idJuego = idJuego;
+	public void setId_juego(Integer id_juego) {
+		this.id_juego = id_juego;
 	}
 
 	public String getTit_juego() {
@@ -129,5 +105,9 @@ public class ModelJuego implements Serializable {
 	public void setStatus_juego(boolean status_juego) {
 		this.status_juego = status_juego;
 	}
+	
+	
+	
+	
 	
 }

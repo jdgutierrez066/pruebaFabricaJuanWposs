@@ -40,7 +40,7 @@ public class ControllerCliente {
 				return Utilidades.response(false, "Faltan datos, error al crear el cliente", null);
 			}else {
 				repositoryCliente.save(cli);
-				return Utilidades.response(true, "Creacion del cliente exitosa", cli);
+				return Utilidades.response(true, "Creacion del cliente exitosomanete", cli);
 			}
 		}catch (Exception e) {
 			return Utilidades.response(false, "Error al crear el cliente", null);
@@ -130,17 +130,17 @@ public class ControllerCliente {
 			}
 			return Utilidades.response(false, "Cliente no encontrado",null);
 		}catch (Exception e) {
-			return Utilidades.response(false, "Error al modificar "+dtoCliente.getId_cli(), null);
+			return Utilidades.response(false, "Error al modificar cliente", null);
 		}		
 	}
 	
 	
 	//Eliminar un cliente por el id
 	@DeleteMapping(path="/deleteCliente/{id}")
-	public @ResponseBody Map<String, Object> deleteCliente(@PathVariable Integer idCliente){
+	public @ResponseBody Map<String, Object> deleteCliente(@PathVariable Integer id){
 		
 		try {
-			Optional<ModelCliente> clienteEliminar = repositoryCliente.findById(idCliente);
+			Optional<ModelCliente> clienteEliminar = repositoryCliente.findById(id);
 			if(clienteEliminar.isPresent()) {
 				repositoryCliente.delete(clienteEliminar.get());
 				return Utilidades.response(true, "Cliente eliminado correctamente", clienteEliminar);
