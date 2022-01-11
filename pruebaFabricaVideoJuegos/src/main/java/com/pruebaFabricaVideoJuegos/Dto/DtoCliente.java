@@ -2,15 +2,15 @@ package com.pruebaFabricaVideoJuegos.Dto;
 
 public class DtoCliente {
 	
-	private Integer id_cli;
+	private Integer idCliente;
 	private Integer cc_cli;
 	private String nom_cli;
 	private String ape_cli;
 	private Integer cel_cli;
 	
-	public DtoCliente(Integer id_cli, Integer cc_cli, String nom_cli, String ape_cli, Integer cel_cli) {
+	public DtoCliente(Integer idCliente, Integer cc_cli, String nom_cli, String ape_cli, Integer cel_cli) {
 		super();
-		this.id_cli = id_cli;
+		this.idCliente = idCliente;
 		this.cc_cli = cc_cli;
 		this.nom_cli = nom_cli;
 		this.ape_cli = ape_cli;
@@ -21,12 +21,12 @@ public class DtoCliente {
 		super();
 	}
 
-	public Integer getId_cli() {
-		return id_cli;
+	public Integer getIdCliente() {
+		return idCliente;
 	}
 
-	public void setId_cli(Integer id_cli) {
-		this.id_cli = id_cli;
+	public void setIdCliente(Integer idCliente) {
+		this.idCliente = idCliente;
 	}
 
 	public Integer getCc_cli() {
@@ -60,6 +60,5 @@ public class DtoCliente {
 	public void setCel_cli(Integer cel_cli) {
 		this.cel_cli = cel_cli;
 	}
-	
 	
 }

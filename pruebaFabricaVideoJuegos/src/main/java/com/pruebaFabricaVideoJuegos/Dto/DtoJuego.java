@@ -3,10 +3,8 @@ package com.pruebaFabricaVideoJuegos.Dto;
 
 public class DtoJuego {
 
-	private Integer id_juego;
+	private Integer idJuego;
 	
-	
-
 	private String tit_juego;
 	private String nom_juego;
 	private String year_juego;
@@ -16,10 +14,10 @@ public class DtoJuego {
 	private Integer precio_juego;
 	private boolean status_juego;
 	
-	public DtoJuego(Integer id_juego, String tit_juego, String nom_juego, String year_juego, String director_juego,
+	public DtoJuego(Integer idJuego, String tit_juego, String nom_juego, String year_juego, String director_juego,
 			String productor_juego, String tipTecnologia_juego, Integer precio_juego, boolean status_juego) {
 		super();
-		this.id_juego = id_juego;
+		this.idJuego = idJuego;
 		this.tit_juego = tit_juego;
 		this.nom_juego = nom_juego;
 		this.year_juego = year_juego;
@@ -34,12 +32,12 @@ public class DtoJuego {
 		super();
 	}
 
-	public Integer getId_juego() {
-		return id_juego;
+	public Integer getIdJuego() {
+		return idJuego;
 	}
 
-	public void setId_juego(Integer id_juego) {
-		this.id_juego = id_juego;
+	public void setIdJuego(Integer idJuego) {
+		this.idJuego = idJuego;
 	}
 
 	public String getTit_juego() {
@@ -105,6 +103,8 @@ public class DtoJuego {
 	public void setStatus_juego(boolean status_juego) {
 		this.status_juego = status_juego;
 	}
+
+	
 	
 	
 	

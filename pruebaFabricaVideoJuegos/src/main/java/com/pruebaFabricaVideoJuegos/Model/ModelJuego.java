@@ -40,10 +40,9 @@ public class ModelJuego implements Serializable {
 	private Integer precio_juego;
 	private boolean status_juego;
 	
-	public ModelJuego(Integer idJuego, String tit_juego, String nom_juego, String year_juego, String director_juego,
+	public ModelJuego(String tit_juego, String nom_juego, String year_juego, String director_juego,
 			String productor_juego, String tipTecnologia_juego, Integer precio_juego, boolean status_juego) {
 		super();
-		this.idJuego = idJuego;
 		this.tit_juego = tit_juego;
 		this.nom_juego = nom_juego;
 		this.year_juego = year_juego;

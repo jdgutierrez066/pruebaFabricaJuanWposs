@@ -90,7 +90,7 @@ public @ResponseBody Map<String, Object> crearJuego (@RequestBody ModelJuego jue
 		
 		try {
 
-			Optional<ModelJuego> juegoModificar = repositoryJuego.findById(dtoJuego.getId_juego());
+			Optional<ModelJuego> juegoModificar = repositoryJuego.findById(dtoJuego.getIdJuego());
 			
 			if(juegoModificar.isPresent()) {
 				ModelJuego juegoReemplazar = juegoModificar.get();

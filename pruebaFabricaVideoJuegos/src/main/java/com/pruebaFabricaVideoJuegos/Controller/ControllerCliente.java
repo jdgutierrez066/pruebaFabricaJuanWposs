@@ -98,7 +98,7 @@ public class ControllerCliente {
 	public @ResponseBody Map<String, Object> modificarCliente(@RequestBody DtoCliente dtoCliente){
 		
 		try {
-			Optional<ModelCliente> clienteModificar = repositoryCliente.findById(dtoCliente.getId_cli());
+			Optional<ModelCliente> clienteModificar = repositoryCliente.findById(dtoCliente.getIdCliente());
 			
 			if(clienteModificar.isPresent()) {
 				
